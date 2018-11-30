@@ -1,0 +1,208 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+font-family: 'Raleway', sans-serif;
+}
+
+h2{
+    text-transform: uppercase;
+    margin: 5%;
+}
+
+section{
+    margin: 10% 0;
+}
+
+// ------------------------------------- HEADER -----------------------------------------------------
+header{
+width: 100%;
+position: relative;
+color: #fff;
+}
+
+.bg-image{
+    position: relative;
+    columns: 1/-1;
+    margin: 0 auto;
+}
+
+
+.head-container{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+.logo, .social-icons, .bg-text{
+    display: inline;
+    position: absolute;
+}
+
+.ham-menu{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+.fa, .fas{
+    color: #fff;
+    font-size: 2em;
+}
+.nav-links{
+    display: none;
+    ul{
+        list-style: none;
+        li{
+            padding: 10px;
+        }
+    }
+}
+
+
+.bg-text{
+    text-align: center;
+    top: 50%;
+    left: 0;
+    text-transform: uppercase;
+    width: 100%; 
+}
+
+.social-icons{
+    bottom: 5px;
+    right: 0px;
+    font-size: 2em;
+    padding: 10px;
+    ul{
+        list-style: none;
+        li{
+            display: inline;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------------- MY WORK -------------------------------
+
+#my-work{
+    text-align: center;
+}
+
+.filters{
+width: 100%;
+display: flex;
+align-content: space-around;
+
+    ul{
+        width: 100%;
+        list-style: none;
+        justify-content: space-between;
+        li{
+            display: inline;
+            padding: 0 2%;
+            border: 2px solid red;
+
+            +:nth-of-type(2){
+                border-color: blue;
+            }
+            +:nth-of-type(3){
+                border-color: yellow;
+            }
+            +:nth-of-type(4){
+                border-color: green;
+            }
+            +:nth-of-type(5){
+                border-color: purple;
+            }
+        }
+    }
+}
+
+.box-container{
+    width: 100%;
+    margin-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .work-box{
+        max-width: 49%;
+        overflow: hidden;
+        img{
+            overflow: hidden;
+        }
+    }
+}
+
+
+
+
+
+
+
+//----------------------------------------- ABOUT ME --------------------------------
+
+#about-me{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+//----------------------------------------- VIDEO --------------------------------
+
+#video{
+    text-align: center;
+
+    video{
+        background-color: #000;
+        width: 80%;
+        height: 30%;
+    }
+}
+
+
+
+
+
+
+
+
+//----------------------------------------- CONTACT ME --------------------------------
+
+#contact{
+    text-align: center;
+}
+
+
+
+
+
+
+
+.openNav{
+    display: block !important;
+}
