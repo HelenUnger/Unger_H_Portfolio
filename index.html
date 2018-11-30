@@ -5,50 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/styles/main.css">
 
     <title>Helen Unger</title>
 </head>
 <body>
+    <div id="portfolio">
     <header>
-        <div class="bg-image">
-            <img src="https://picsum.photos/1000/500/?random" alt="bg image">
-        </div>
-        <div class="logo">
-            <img src="https://picsum.photos/100/200/?random" alt="logo">
-        </div>
+        <img class="bg-image" src="https://picsum.photos/g/375/500/?random" alt="bg image">
+        <!-- 1600/700 -->
+        <!-- 500/500 -->
 
-        <nav class="menu">
-            <ul>
-                <li>work</li>
-                <li>video</li>
-                <li>about</li>
-                <li>contact</li>
-            </ul>
-        </nav>
+        <div class="head-container">
+            <div class="logo">
+                <img src="https://picsum.photos/100/50/?random" alt="logo">
+            </div>
+
+            <nav class="menu">
+                <div v-on:click="toggleNav" class="ham-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div :class="{'openNav' : navTrue} nav-links">
+                    <ul>
+                        <li>work</li>
+                        <li>video</li>
+                        <li>about</li>
+                        <li>contact</li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
         <div class="bg-text">
-            <h1>Helen Unger</h1>
-            <h3>I Dream In Code.</h3>
-        </div>
+                <h1>Helen Unger</h1>
+                <h3>I Dream In Code.</h3>
+            </div>
 
-        <div class="social-icons">
-            <ul>
-                <li>github</li>
-                <li>linkedin</li>
-                <li>instagram</li>
-            </ul>
-        </div>
-
+            <div class="social-icons">
+                <ul>
+                    <li><i class="fab fa-github-square"></i></li>
+                    <li><i class="fab fa-linkedin"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                </ul>
+            </div>
     </header>
+
     <main id="main-content">
         <section id="my-work">
             <h2>my work</h2>
 
             <div class="open-close">^</div>
 
+            <div class="work-container">
             <div class="filters">
                 <ul>
                     <li>front end</li>
@@ -59,15 +69,16 @@
                 </ul>
             </div>
             <div class="box-container">
-                <div class="work-box"><img src="https://picsum.photos/100/100/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/100/100/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/100/100/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/100/100/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/100/100/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/100/100/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/100/100/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/100/100/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/200/200/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/200/200/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/200/200/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/200/200/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/200/200/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/200/200/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/200/200/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/200/200/?random" alt="image"></div>
             </div>
+        </div>
         </section>
 
         <section id="about-me">
@@ -109,6 +120,7 @@
     <footer>
 
     </footer>
+    </div>
     <script src="public/js/main.js"></script>
 </body>
 </html>
