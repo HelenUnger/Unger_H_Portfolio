@@ -4,18 +4,33 @@
     
         data: {
             navTrue: false,
+            scroll: false
         },
     
-        created : function(){
+        created () {
+            window.addEventListener('scroll', this.handleScroll);
         },
     
         methods : {   
             toggleNav(e){
-                if (navTrue){
-                    navTrue = false;
+                if (!this.navTrue){
+                    this.navTrue = true;
                 }else{
-                    navTrue = true;
+                    this.navTrue = false;
                 }
+            },
+
+            closeNav(e){
+                this.navTrue = false;
+            },
+
+            handleScroll(e){
+                console.log(e.pageYOffset);
+                if (e.scrollTop > 500) {
+                    scroll = true;
+                  } else {
+                    scroll= false;
+                  }
             }
         }
     });
