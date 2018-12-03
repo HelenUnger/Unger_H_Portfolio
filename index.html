@@ -14,7 +14,7 @@
 <body>
     <div id="portfolio">
     <header>
-        <img class="bg-image" src="https://picsum.photos/g/375/500/?random" alt="bg image">
+        <img class="bg-image" src="https://picsum.photos/g/375/600/?random" alt="bg image">
         <!-- 1600/700 -->
         <!-- 500/500 -->
 
@@ -57,7 +57,7 @@
         <section id="my-work">
             <h2>my work</h2>
 
-            <div class="work-container">
+            <div :class="{openWork : workClicked}" class="work-container">
             <div class="filters">
                 <ul>
                     <li>front end</li>
@@ -79,25 +79,24 @@
             </div>
         </div>
 
-        <div class="open-close">^</div>
+        <div v-on:click="toggleWork" :class="{up : workClicked}" class="open-close"><i class="fas fa-angle-down"></i></div>
 
         </section>
 
         <section id="about-me">
             <h2>about me</h2>
 
-            <div class="infographic">
+            <div :class="{openWork : aboutClicked}" class="infographic">
                     <img src="https://picsum.photos/300/500/?random" alt="image">
             </div>
 
-            <div class="open-close">^</div>
+            <div v-on:click="toggleAbout" :class="{up : aboutClicked}" class="open-close"><i class="fas fa-angle-down"></i></div>
         </section>
 
         <section id="video">
             <h2>video</h2>
 
-            <div class="open-close">^</div>
-
+            <div :class="{openWork : videoClicked}" class="video-container">
             <video>
                 <source src="" type="">
                 <div id="vid-icons">
@@ -108,13 +107,25 @@
                     </ul>
                 </div>
             </video>
+            </div>
+
+            <div v-on:click="toggleVideo" :class="{up : videoClicked}" class="open-close"><i class="fas fa-angle-down"></i></div>
         </section>
 
 
         <section id="contact">
             <h2>contact me</h2>
             <form action="" method="POST">
+                <label for="name">NAME</label>
+                <input type="text" id="name" name="name">
 
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" name="email">
+
+                <label for="message">MESSAGE</label>
+                <textarea type="text" rows="5" id="message" name="message"></textarea>
+
+                <button class="button" type="submit">SEND</button>
             </form>
         </section>
     </main>
