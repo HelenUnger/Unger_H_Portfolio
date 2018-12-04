@@ -14,7 +14,7 @@
 <body>
     <div id="portfolio">
     <header>
-        <img class="bg-image" src="https://picsum.photos/g/375/600/?random" alt="bg image">
+        <img class="bg-image" src="https://picsum.photos/g/3000/600/?random" alt="bg image">
         <!-- 1600/700 -->
         <!-- 500/500 -->
 
@@ -29,11 +29,16 @@
                 </div>
                 <div class="nav-links" :class="{openNav : navTrue}">
                     <div v-on:click="toggleNav" class="exit"><i class="fas fa-times"></i></div>
-                    <ul>
-                        <li><a v-on:click="navTrue = false" href="#my-work">work</a></li>
-                        <li><a v-on:click="navTrue = false" href="#about-me">about</a></li>
-                        <li><a v-on:click="navTrue = false" href="#video">video</a></li>
-                        <li><a v-on:click="navTrue = false" href="#contact">contact</a></li>
+                    <ul class="links">
+                        <li><a v-on:click="workLink" href="#my-work">work</a></li>
+                        <li><a v-on:click="aboutLink" v-on:click="navTrue = false" href="#about-me">about</a></li>
+                        <li><a v-on:click="videoLink" v-on:click="navTrue = false" href="#video">video</a></li>
+                        <li><a v-on:click="contactLink" v-on:click="navTrue = false" href="#contact">contact</a></li>
+                    </ul>
+                    <ul class="social">
+                        <li><i class="fab fa-github-square"></i></li>
+                        <li><i class="fab fa-linkedin"></i></li>
+                        <li><i class="fab fa-instagram"></i></li>
                     </ul>
                 </div>
             </nav>
@@ -68,14 +73,14 @@
                 </ul>
             </div>
             <div class="box-container">
-                <div class="work-box"><img src="https://picsum.photos/g/200/200/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/g/200/200/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/g/200/200/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/g/200/200/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/g/200/200/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/g/200/200/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/g/200/200/?random" alt="image"></div>
-                <div class="work-box"><img src="https://picsum.photos/g/200/200/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/g/300/300/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/g/300/300/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/g/300/300/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/g/300/300/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/g/300/300/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/g/300/300/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/g/300/300/?random" alt="image"></div>
+                <div class="work-box"><img src="https://picsum.photos/g/300/300/?random" alt="image"></div>
             </div>
         </div>
 
@@ -115,18 +120,20 @@
 
         <section id="contact">
             <h2>contact me</h2>
-            <form action="" method="POST">
-                <label for="name">NAME</label>
-                <input type="text" id="name" name="name">
+            <div class="form-container">
+                <form action="" method="POST">
+                    <label for="name">NAME</label>
+                    <input type="text" id="name" name="name">
 
-                <label for="email">EMAIL</label>
-                <input type="email" id="email" name="email">
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" name="email">
 
-                <label for="message">MESSAGE</label>
-                <textarea type="text" rows="5" id="message" name="message"></textarea>
+                    <label for="message">MESSAGE</label>
+                    <textarea type="text" rows="5" id="message" name="message"></textarea>
 
-                <button class="button" type="submit">SEND</button>
-            </form>
+                    <button class="button" type="submit">SEND</button>
+                </form>
+            </div>
         </section>
     </main>
     

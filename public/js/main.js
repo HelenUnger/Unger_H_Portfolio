@@ -16,49 +16,62 @@
         },
     
         methods : {   
-            toggleNav(e){
-                if (!this.navTrue){
-                    this.navTrue = true;
-                }else{
-                    this.navTrue = false;
-                }
+            toggleNav(){
+                this.navTrue = (!this.navTrue) ? true : false;
             },
 
-            closeNav(e){
+            closeNav(){
                 this.navTrue = false;
             },
 
-            handleScroll(e){
-                console.log(e.pageYOffset);
-                if (e.scrollTop > 500) {
-                    scroll = true;
-                  } else {
-                    scroll= false;
-                  }
+            handleScroll(){
+                this.scroll = (pageYOffset > 50) ? true : false;
             },
 
-            toggleWork(e){
-                if (!this.workClicked){
-                    this.workClicked = true;
-                }else{
-                    this.workClicked = false;
-                }
+            toggleWork(){
+                this.workClicked = (!this.workClicked) ? true : false;
+                this.aboutClicked = false;
+                this.videoClicked = false;
             },
 
-            toggleAbout(e){
-                if (!this.aboutClicked){
-                    this.aboutClicked = true;
-                }else{
-                    this.aboutClicked = false;
-                }
+            toggleAbout(){
+                this.aboutClicked = (!this.aboutClicked) ? true : false;
+                this.workClicked = false;
+                this.videoClicked = false;
             },
 
-            toggleVideo(e){
-                if (!this.videoClicked){
-                    this.videoClicked = true;
-                }else{
-                    this.videoClicked = false;
-                }
+            toggleVideo(){
+                this.videoClicked = (!this.videoClicked) ? true : false;
+                this.workClicked = false;
+                this.aboutClicked = false;
+            },
+
+            workLink(){
+                this.navTrue = false;
+                this.workClicked = true;
+                this.aboutClicked = false;
+                this.videoClicked = false;
+            },
+
+            aboutLink(){
+                this.navTrue = false;
+                this.workClicked = false;
+                this.aboutClicked = true;
+                this.videoClicked = false;
+            },
+
+            videoLink(){
+                this.navTrue = false;
+                this.workClicked = false;
+                this.aboutClicked = false;
+                this.videoClicked = true;
+            },
+
+            contactLink(){
+                this.navTrue = false;
+                this.workClicked = false;
+                this.aboutClicked = false;
+                this.videoClicked = false;
             }
         }
     });
