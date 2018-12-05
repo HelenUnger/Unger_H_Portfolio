@@ -64,13 +64,41 @@ overflow: hidden;
     transition: .5s;
 }
 
+svg{
+    height: 50px;
+    margin: 5px 10px;
+    fill: #fff;
+}
+
+.black{
+    fill: #000;
+}
+
+
 .headColor{
-    background-color: rgba($color: #d0d0d0, $alpha: 1.0);
+    background-color: rgba($color: #f8f8f8, $alpha: 1.0);
 }
 
 .logo, .social-icons, .bg-text{
     display: inline;
     position: absolute;
+}
+
+.yellow{
+    color: $yellow;
+}
+.blue{
+    color: $blue;
+}
+.pink{
+    color: $pink;
+}
+.green{
+    color: $green;
+}
+
+.social i{
+    color: $purple;
 }
 
 .ham-menu{
@@ -85,13 +113,14 @@ overflow: hidden;
     z-index: 100;
     width: 100vw;
     height: 100vh;
-    background-color: #ccc;
+    background-color: #fff;
     transition: all 0.5s ease-in-out;
 
     .exit{
         position: absolute;
         right: 10px;
         top: 10px;
+        color: #000;
     }
 
    .links{
@@ -181,15 +210,15 @@ padding: 20px 0;
         list-style: none;
         justify-content: space-between;
         li{
-            display: inline;
+            display: inline-block;
             padding: 0 2%;
-            border: 2px solid $pink;
-
+            border: 2px solid $yellow;
+            margin: 3% 2%;
             +:nth-of-type(2){
                 border-color: $blue;
             }
             +:nth-of-type(3){
-                border-color: $yellow;
+                border-color: $pink;
             }
             +:nth-of-type(4){
                 border-color: $green;
@@ -204,14 +233,18 @@ padding: 20px 0;
 .box-container{
     width: 100%;
     margin-top: 3%;
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: space-evenly;
     .work-box{
         overflow: hidden;
         float: left;
         padding: 1%;
         max-width: 50%;
+        filter: grayscale(100%);
+        transition: .5s;
+
+        &:hover{
+            filter: grayscale(0%);
+        }
+
         img{
             max-width: 100%;
             // overflow: hidden;
@@ -219,6 +252,35 @@ padding: 20px 0;
     }
 }
 
+.detail-container{
+    z-index: 1005;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #b8b8b8, $alpha: 0.5)
+}
+
+.project-details{
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    width: 90vw;
+    height: 85vh;
+    background-color: #ccc;
+}
+
+.show-details{
+    display: block !important;
+}
+
+.close{
+    float: right;
+    margin: 1% 2%;
+    font-size: 1em;
+}
 
 .work-container{
     padding: 0;
@@ -386,7 +448,12 @@ label {
 
     .head-container{
         font-size: 2em;
+        height: 100px;
+    }
+
+    svg{
         height: 90px;
+        margin: 7px 20px;
     }
 
     .nav-links{
@@ -415,6 +482,25 @@ label {
     .box-container{
         width: 75%;
         margin: 0 auto;
+    }
+    
+    .project-details{
+        position: fixed;
+        top: 10%;
+        left: 5%;
+        width: 90vw;
+        height: 80vh;
+        background-color: #ccc;
+    }
+    
+    .show-details{
+        display: block !important;
+    }
+    
+    .close{
+        float: right;
+        margin: 30px;
+        font-size: 2em;
     }
 }
 
@@ -452,6 +538,9 @@ label {
                 text-align: right;
                 border: none;
 
+                &:hover a{
+                    color: $purple;
+                }
             }
         }
         .social{
