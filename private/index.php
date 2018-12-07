@@ -2,13 +2,12 @@
 
 include 'functions.php';
 
-if(isset($_GET['project'])){
-    //pass the connection and the movie id to a funtion
-    $data = get_single_project($conn, $_GET['project']);
+if(isset($_GET['getTypes'])){
+    //pass the connection and the type id to a funtion
+    $data = get_all_types($conn);
     echo json_encode($data);
-}
-else{
-    //pass the connection and the movie id to a funtion
+}else{
+    //pass the connection to a funtion
     $data = get_all_projects($conn);
     echo json_encode($data);
 }

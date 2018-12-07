@@ -14,7 +14,16 @@
 <body>
     <div id="portfolio">
     <header>
-        <img class="bg-image" src="https://picsum.photos/g/3000/600/?random" alt="bg image">
+        <!-- <img class="bg-image" src="public/images/2560/sky.jpg" alt="bg image"> -->
+        <img srcset="public/images/375/sky.jpg 375w,
+                    public/images/768/sky.jpg 768w,
+                    public/images/1578/sky.jpg 1578w,
+                    public/images/2560/sky.jpg 2560w"
+            sizes="(min-width: 2560px) 100vw,
+                    (min-width: 1578px) 100vw,
+                    (min-width: 800px) 100vw,
+                    (min-width: 500px) 100vw"
+            src="public/images/2560/sky.jpg" alt="bg image">
         <!-- 1600/700 -->
         <!-- 500/500 -->
 
@@ -78,15 +87,12 @@
             <div :class="{openWork : workClicked}" class="work-container">
             <div class="filters">
                 <ul>
-                    <li>front end</li>
-                    <li>back end</li>
-                    <li>design</li>
-                    <li>modeling</li>
-                    <li>all</li>
+                    <li v-for="type in allTypes" v-on:click="filterProjects" :data-type="type.type_id">{{type.type_name}}</li>
+                    <li v-on:click="fetchAllData">all</li>
                 </ul>
             </div>
             <div class="box-container">
-                <div v-for="project in allprojects" :data-project="project.project_id" v-on:click="loadProject" class="work-box">
+                <div v-for="project in filteredprojects" :data-project="project.project_id" v-on:click="loadProject" class="work-box">
                     <img :src="'public/images/' + project.project_main_img" alt="image">
                 </div>
             </div>
@@ -95,6 +101,16 @@
         <div class="detail-container" :class="{'show-details' : showDetails}" >
             <div class="project-details">
                     <div v-on:click="closeDetails" class="close"><i class="fas fa-times"></i></div>
+                    <div class="images">
+                        <img :src="'public/images/' + projectImg1" alt="project image">
+                        <img :src="'public/images/' + projectHomeImg" alt="main image">
+                        <img :src="'public/images/' + projectImg2" alt="project image">
+                    </div>
+                    <div class="info">
+                        <h3>{{projectName}}</h3>
+                        <p></p>
+                        <p>{{projectDesc}}</p>
+                    </div>
             </div>
         </div>
 
@@ -106,7 +122,7 @@
             <h2>about me</h2>
 
             <div :class="{openWork : aboutClicked}" class="infographic">
-                    <img src="https://picsum.photos/300/500/?random" alt="image">
+                    <img src="public/images/helen.png" alt="image of me, helen">
             </div>
 
             <div v-on:click="toggleAbout" :class="{up : aboutClicked}" class="open-close"><i class="fas fa-angle-down"></i></div>
