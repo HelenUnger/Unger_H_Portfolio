@@ -12,6 +12,8 @@
             
             singleproject: [],
             allprojects: [],
+            filteredprojects: [],
+            allTypes:[],
 
             projectName: "",
             projectDesc: "",
@@ -23,7 +25,8 @@
     
         created () {
             window.addEventListener('scroll', this.handleScroll);
-            this.fetchProjectData(null);
+            this.fetchTypes();
+            this.fetchAllData();
         },
     
         methods : {   
@@ -89,13 +92,6 @@
                 this.videoClicked = false;
             },
 
-
-
-            // fetchSpecific(e){
-            //     console.log("ONE");
-            //     this.fetchProjectData(e.currentTarget.dataset.project); //this will be a number (id)
-            // },
-
             loadProject(e){
                 id = e.currentTarget.dataset.project;
                 currentData = this.allprojects.filter(project=>project.project_id === id);
@@ -109,22 +105,35 @@
                 this.showDetails = true;
             },
 
-
-            fetchProjectData(project){
-                url = project ? `./private/index.php?project=${project}` : './private/index.php';
+            filterProjects(e){
+                id = e.currentTarget.dataset.type;
+                currentData = this.allprojects.filter(project=>project.type_id === id);
+                this.filteredprojects = currentData;
+                console.log(currentData);
+            },
+            
+            fetchTypes(){
+                url = './private/index.php?getTypes=true';
     
-                fetch(url)//pass in one or many query
+                fetch(url)
                 .then(res=>res.json())
                 .then(data =>{
-                    if(project){
-                        console.log(data);
-                        //getting one movie , so use the single array
-                        this.singleproject = data;
-                    }else{
-                        //push all the data
-                        console.log(data);
-                        this.allprojects = data;
-                    }
+                    console.log(data);
+                    //getting all the projects
+                    this.allTypes = data;
+                })
+            },
+
+            fetchAllData(){
+                url = './private/index.php';
+    
+                fetch(url)
+                .then(res=>res.json())
+                .then(data =>{
+                    console.log(data);
+                    //getting all the projects
+                    this.allprojects = data;
+                    this.filteredprojects = data;
                 })
             }
         }
