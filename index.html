@@ -122,7 +122,33 @@
             <h2>about me</h2>
 
             <div :class="{openWork : aboutClicked}" class="infographic">
+                <div class="about-data">
+                    <div class="skills" :class="{openSkill : skillClicked }">
+                        <div class="aboutIcons" v-on:click="toggleSkill"><i class="fas fa-brain"></i></div>
+                        <h4>Skills</h4>
+                        <ul class="list">
+                            <li>HTML</li>
+                            <li>CSS/SASS</li>
+                            <li>JavaScript</li>
+                            <li>PHP/MYSQL</li>
+                            <li>Laravel</li>
+                            <li>Github</li>
+                        </ul>
+                    </div>
+                    <div class="interest" :class="{openInterest : interestClicked }">
+                        <div class="aboutIcons" v-on:click="toggleInterest"><i class="fas fa-heart"></i></div>
+                        <h4>Interests</h4>
+                        <ul class="list">
+                            <li>Video Games</li>
+                            <li>Adventures</li>
+                            <li>Technology</li>
+                            <li>Japan</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="meImg" :class="[{moveRight : skillClicked}, {moveLeft : interestClicked }]" >
                     <img src="public/images/helen.png" alt="image of me, helen">
+                </div>
             </div>
 
             <div v-on:click="toggleAbout" :class="{up : aboutClicked}" class="open-close"><i class="fas fa-angle-down"></i></div>

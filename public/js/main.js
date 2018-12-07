@@ -8,7 +8,8 @@
             workClicked: false,
             aboutClicked: false,
             videoClicked: false,
-            
+            skillClicked:false,
+            interestClicked: false,
             
             singleproject: [],
             allprojects: [],
@@ -50,18 +51,34 @@
                 this.workClicked = (!this.workClicked) ? true : false;
                 this.aboutClicked = false;
                 this.videoClicked = false;
+                this.skillClicked = false;
+                this.interestClicked = false;
             },
 
             toggleAbout(){
                 this.aboutClicked = (!this.aboutClicked) ? true : false;
                 this.workClicked = false;
                 this.videoClicked = false;
+                this.skillClicked = false;
+                this.interestClicked = false;
+            },
+
+            toggleSkill(){
+                this.skillClicked = true;
+                this.interestClicked = false;
+            },
+
+            toggleInterest(){
+                this.interestClicked = true;
+                this.skillClicked = false;
             },
 
             toggleVideo(){
                 this.videoClicked = (!this.videoClicked) ? true : false;
                 this.workClicked = false;
                 this.aboutClicked = false;
+                this.skillClicked = false;
+                this.interestClicked = false;
             },
 
             workLink(){
@@ -69,6 +86,8 @@
                 this.workClicked = true;
                 this.aboutClicked = false;
                 this.videoClicked = false;
+                this.skillClicked = false;
+                this.interestClicked = false;
             },
 
             aboutLink(){
@@ -76,6 +95,8 @@
                 this.workClicked = false;
                 this.aboutClicked = true;
                 this.videoClicked = false;
+                this.skillClicked = false;
+                this.interestClicked = false;
             },
 
             videoLink(){
@@ -83,6 +104,8 @@
                 this.workClicked = false;
                 this.aboutClicked = false;
                 this.videoClicked = true;
+                this.skillClicked = false;
+                this.interestClicked = false;
             },
 
             contactLink(){
@@ -90,6 +113,8 @@
                 this.workClicked = false;
                 this.aboutClicked = false;
                 this.videoClicked = false;
+                this.skillClicked = false;
+                this.interestClicked = false;
             },
 
             loadProject(e){
