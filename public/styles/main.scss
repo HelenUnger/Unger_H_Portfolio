@@ -20,7 +20,7 @@ h2{
 }
 
 section{
-    padding: 30px 0 20px 0;
+    padding: 50px 0 20px 0;
 }
 
 .fa, .fas{
@@ -211,21 +211,37 @@ padding: 20px 0;
         list-style: none;
         justify-content: space-between;
         li{
+            cursor: pointer;
             display: inline-block;
             padding: 0 2%;
             border: 2px solid $yellow;
             margin: 3% 2%;
+            &:hover{
+                background-color: $yellow;
+            }
             +:nth-of-type(2){
                 border-color: $blue;
+                &:hover{
+                    background-color: $blue;
+                }
             }
             +:nth-of-type(3){
                 border-color: $pink;
+                &:hover{
+                    background-color: $pink;
+                }
             }
             +:nth-of-type(4){
                 border-color: $green;
+                &:hover{
+                    background-color: $green;
+                }
             }
             +:nth-of-type(5){
-                border-color: purple;
+                border-color: $purple;
+                &:hover{
+                    background-color: $purple;
+                }
             }
         }
     }
@@ -279,21 +295,24 @@ padding: 20px 0;
         flex-wrap: wrap;
         justify-content: center;
         img{
-            max-height: 110px;
+            max-height: 95px;
             margin: 5px;
         }
     }
+}
+
+.close{
+    position: absolute;
+    right: 4%;
+    margin-top: 3%;
+    font-size: 1em;
 }
 
 .show-details{
     display: block !important;
 }
 
-.close{
-    float: right;
-    margin: 1% 2%;
-    font-size: 1em;
-}
+
 
 .work-container{
     padding: 0;
@@ -323,12 +342,49 @@ padding: 20px 0;
     padding: 0;
     overflow: hidden;
     transition: max-height 1s linear;
+    .meImg{
+        z-index: -10;
+        transition: 1s;
+        margin-top: -100px;
+    }
+    img{
+        max-width: 100vw;
+    }
+    .about-data{
+        display: flex;
+        justify-content: space-around;
+        z-index: 10;
+        .aboutIcons{
+            cursor: pointer;
+            &:hover{
+                color: $purple;
+            }
+        }
+    }
 }
 
+.openSkill, .openInterest {
+    color: $pink;
+    .list{
+        color: $blue;
+        opacity: 1;
+    }
+}
 
+.moveLeft{
+    margin-left: -50%;
+}
 
+.moveRight{
+    margin-right: -50%;
+}
 
-
+.list{
+    text-align: left;
+    margin-top: 10px; 
+    transition: 1s;
+    opacity: 0;
+}
 
 
 
@@ -447,6 +503,21 @@ label {
 
 
 //------------------------------------------------ MEDIA QUERIES --------------------------------------------
+@media screen and (min-width:375px){
+    .project-details{
+        .images{
+            margin-top: 50px;
+            max-width: 90vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            img{
+                max-height: 100px;
+                margin: 5px;
+            }
+        }
+    }
+}
 
 @media screen and (min-width: 760px){
     h1{
@@ -497,13 +568,9 @@ label {
         margin: 0 auto;
     }
     
-    .project-details{
-        position: fixed;
-        top: 10%;
-        left: 5%;
-        width: 90vw;
-        height: 80vh;
-        background-color: #ccc;
+    .project-details .images img{
+        max-height: 200px;
+        margin: 5px;
     }
     
     .show-details{
@@ -511,9 +578,25 @@ label {
     }
     
     .close{
-        float: right;
-        margin: 30px;
+        position: absolute;
+        right: 2%;
+        margin: 0;
         font-size: 2em;
+    }
+
+    .aboutIcons{
+        font-size: 2em;
+    }
+    .list{
+        font-size: 1.8em;
+    }
+    .infographic {
+        h4{
+            font-size: 2em;
+        }
+        .meImg{
+        margin-top: -220px;
+        }
     }
 }
 
@@ -567,7 +650,6 @@ label {
 
     .work-container, .infographic, .video-container{
         max-height: 1000px !important;
-        padding: 10px 0;
     }
 
     .box-container{
@@ -581,15 +663,68 @@ label {
         display: none;
     }
 
-    #my-work, #about-me, #video, #contact{
-        padding: 100px 0;
+    section{
+        padding: 120px 0 20px 0;
     } 
+
+    .project-details {
+        .info{
+            margin-top: 30px;
+            h3{
+                font-size: 3em;
+            }
+            p{
+                font-size: 1.8em;
+                &:first-of-type{
+                    font-weight: bold;
+                }
+            }
+        }
+        .images img{
+        max-height: 270px;
+        margin: 5px;
+        }
+    }
+
+    .close{
+        font-size: 1.5em;
+    }
+
+    #about-me{
+        padding: 120px 0 0 0;
+    }
+
+    .list{
+        margin-top: 30px;
+        font-size: 2em;
+    }
+
+    .infographic {
+        padding: 10px 0 0 0;
+        h4{
+            font-size: 2em;
+        }
+        .meImg img{
+            max-width: 80vw;
+        }
+    }
+
+    #video{
+        padding: 120px 0 50px 0;
+    }
 
     .form-container{
         margin: 0 auto;
         max-width: 70%;
     }
 }
+
+@media screen and (min-width: 1200px){
+    .infographic .meImg img{
+        max-width: 50vw;
+    }
+}
+
 @media screen and (min-width: 1400px){
     .bg-image{
         max-width: 100vw;
@@ -632,6 +767,46 @@ label {
                     margin: 20px;
                 }
             }
+        }
+
+        .project-details {
+            width: 70vw;
+            left: 15%;
+            .info{
+                margin-top: 30px;
+                h3{
+                    font-size: 3em;
+                }
+                p{
+                    font-size: 1.8em;
+                    &:first-of-type{
+                        font-weight: bold;
+                    }
+                }
+            }
+            .images img{
+            max-height: max-content;
+            margin: 5px;
+            }
+        }
+    }
+
+    .list{
+        font-size: 2.4em;
+    }
+
+    .aboutIcons i{
+        font-size: 2.6em;
+    }
+
+    .infographic {
+        max-width: 1500px;
+        margin: 0 auto;
+        h4{
+            font-size: 2.6em;
+        }
+        .meImg img{
+            margin-top: -90px;
         }
     }
 }
