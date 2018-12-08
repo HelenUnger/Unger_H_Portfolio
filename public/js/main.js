@@ -17,6 +17,7 @@
             allTypes:[],
 
             projectName: "",
+            projectType: "",
             projectDesc: "",
             projectHomeImg: "",
             projectImg1: "",
@@ -122,6 +123,7 @@
                 currentData = this.allprojects.filter(project=>project.project_id === id);
                 console.log(currentData);
                 this.projectName = currentData[0].project_name;
+                this.projectType = currentData[0].type_name;
                 this.projectDesc = currentData[0].project_desc;
                 this.projectHomeImg = currentData[0].project_main_img;
                 this.projectImg1 = currentData[0].project_img1;

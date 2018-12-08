@@ -13,23 +13,31 @@
 </head>
 <body>
     <div id="portfolio">
+
+        <?php if((isset($_GET['status'])) && ($_GET['status'] === 'successful')):?>
+        <div class="success message">Email was sent!</div>
+        <?php endif ?>
+
+        <?php if((isset($_GET['status'])) && ($_GET['status'] === 'error')):?>
+        <div class="error message">Oops! Something went wrong!</div>
+        <?php endif ?>
+
     <header>
-        <!-- <img class="bg-image" src="public/images/2560/sky.jpg" alt="bg image"> -->
-        <img srcset="public/images/375/sky.jpg 375w,
+        <img class="bg-image" 
+            srcset="public/images/375/sky.jpg 375w,
                     public/images/768/sky.jpg 768w,
                     public/images/1578/sky.jpg 1578w,
                     public/images/2560/sky.jpg 2560w"
             sizes="(min-width: 2560px) 100vw,
                     (min-width: 1578px) 100vw,
-                    (min-width: 800px) 100vw,
+                    (min-width: 768px) 100vw,
                     (min-width: 500px) 100vw"
             src="public/images/2560/sky.jpg" alt="bg image">
-        <!-- 1600/700 -->
-        <!-- 500/500 -->
 
         <div class="head-container" :class="{headColor : scroll}">
+        <a class="logo-link" href="#">
             <div class="logo">
-                <svg :class="{black : scroll}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 718.8 648.71">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 718.8 648.71">
                     <title>logo</title>
                     <g id="ed51bf4e-35e0-466f-9e99-e6e016129db8" data-name="Layer 2">
                         <g id="2f4f36e1-eeec-4e9c-a149-bd94ed8bbccd" data-name="Layer 1">
@@ -38,6 +46,7 @@
                     </g>
                 </svg>
             </div>
+        </a>
 
             <nav class="menu">
                 <div v-on:click="toggleNav" class="ham-menu">
@@ -52,9 +61,9 @@
                         <li><a v-on:click="contactLink" class="green" href="#contact">contact</a></li>
                     </ul>
                     <ul class="social">
-                        <li><i class="fab fa-github-square"></i></li>
-                        <li><i class="fab fa-linkedin"></i></li>
-                        <li><i class="fab fa-instagram"></i></li>
+                        <li><a href="https://github.com/HelenUnger"><i class="fab fa-github-square"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/helen-unger/"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="https://www.instagram.com/img_src__/"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
             </nav>
@@ -71,11 +80,13 @@
                 </h3>
             </div>
 
+            <a class="resume" href="/private/resume.pdf" target="_blank">RESUME</a>
+
             <div class="social-icons">
                 <ul>
-                    <li><i class="fab fa-github-square"></i></li>
-                    <li><i class="fab fa-linkedin"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
+                    <li><a href="https://github.com/HelenUnger"><i class="fab fa-github-square"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/helen-unger/"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://www.instagram.com/img_src__/"><i class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
     </header>
@@ -108,7 +119,7 @@
                     </div>
                     <div class="info">
                         <h3>{{projectName}}</h3>
-                        <p></p>
+                        <p>{{projectType}}</p>
                         <p>{{projectDesc}}</p>
                     </div>
             </div>
@@ -177,15 +188,15 @@
         <section id="contact">
             <h2>contact me</h2>
             <div class="form-container">
-                <form action="" method="POST">
+                <form action="private/contact.php" method="POST">
                     <label for="name">NAME</label>
-                    <input type="text" id="name" name="name">
+                    <input required type="text" id="name" name="name">
 
                     <label for="email">EMAIL</label>
-                    <input type="email" id="email" name="email">
+                    <input required type="email" id="email" name="email">
 
                     <label for="message">MESSAGE</label>
-                    <textarea type="text" rows="5" id="message" name="message"></textarea>
+                    <textarea required type="text" rows="5" id="message" name="message"></textarea>
 
                     <button class="button" type="submit">SEND</button>
                 </form>
@@ -194,7 +205,15 @@
     </main>
     
     <footer>
-
+    <ul>
+            <li><a v-on:click="workLink"  href="#my-work">work</a></li>
+            <li><a v-on:click="aboutLink"  href="#about-me">about</a></li>
+            <li><a v-on:click="videoLink"   href="#video">video</a></li>
+            <li><a v-on:click="contactLink"  href="#contact">contact</a></li>
+            <li class="footIcon"><a href="https://github.com/HelenUnger"><i class="fab fa-github-square"></i></a></li>
+            <li class="footIcon"><a href="https://www.linkedin.com/in/helen-unger/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="footIcon"><a href="https://www.instagram.com/img_src__/"><i class="fab fa-instagram"></i></a></li>
+        </ul>
     </footer>
     </div>
     <script src="public/js/main.js"></script>
