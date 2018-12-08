@@ -169,16 +169,11 @@
             <h2>video</h2>
 
             <div :class="{openWork : videoClicked}" class="video-container">
-            <video>
-                <source src="" type="">
-                <div id="vid-icons">
-                    <ul>
-                        <li>rewind</li>
-                        <li>play/pause</li>
-                        <li>forward</li>
-                    </ul>
-                </div>
+
+            <video controls preload="auto" playsinline>
+            <source src="public/video/demo_reel.mp4" type="video/mp4">
             </video>
+
             </div>
 
             <div v-on:click="toggleVideo" :class="{up : videoClicked}" class="open-close"><i class="fas fa-angle-down"></i></div>
