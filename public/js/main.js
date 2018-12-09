@@ -140,7 +140,7 @@
             },
             
             fetchTypes(){
-                url = './private/index.php?getTypes=true';
+                url = './private/json.php?getTypes=true';
     
                 fetch(url)
                 .then(res=>res.json())
@@ -152,7 +152,7 @@
             },
 
             fetchAllData(){
-                url = './private/index.php';
+                url = './private/json.php';
     
                 fetch(url)
                 .then(res=>res.json())
