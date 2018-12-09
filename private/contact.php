@@ -14,9 +14,10 @@ function send_email(){
   
     $to = 'helen-unger@hotmail.com';
     $subject = "MESSAGE FROM WEBSITE";
-    $message ='From: '.filter_var($_POST['email'], FILTER_SANITIZE_EMAIL).' \r\n';
+    $message = 'Name: '. filter_var($_POST['name'], FILTER_SANITIZE_STRING) . "\n";
+    $message .='From: '.filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) . "\n";
     $message .= 'Message:'. filter_var($_POST['message'], FILTER_SANITIZE_STRING);
-    $headers = 'From: '. filter_var($_POST['name'], FILTER_SANITIZE_STRING).' \r\n';
+    $headers = 'From: '. filter_var($_POST['name'], FILTER_SANITIZE_STRING). "\n";
     $headers .= 'Reply-To:'. filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     
     if(mail($to, $subject, $message, $headers)){
