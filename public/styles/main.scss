@@ -474,6 +474,13 @@ label {
     margin-top: 10px;
 }
 
+label:nth-of-type(3), input:nth-of-type(3){
+visibility: hidden;
+width: 2px;
+height: 2px;
+margin-bottom: -20px; 
+}
+
 
 .button{
     font-family: raleway, sans-serif;
@@ -829,7 +836,7 @@ footer{
 
 @media screen and (min-width: 1400px){
 
-    video{
+    #video .video-container video{
         width: 60%;
     }
 

@@ -24,10 +24,10 @@
 
     <header>
         <img class="bg-image" 
-            srcset="public/images/375/sky.jpg 375w,
-                    public/images/768/sky.jpg 768w,
-                    public/images/1578/sky.jpg 1578w,
-                    public/images/2560/sky.jpg 2560w"
+            srcset="public/images/sky375.jpg 375w,
+                    public/images/sky768.jpg 768w,
+                    public/images/sky15778.jpg 1578w,
+                    public/images/sky2560.jpg 2560w"
             sizes="(min-width: 2560px) 100vw,
                     (min-width: 1578px) 100vw,
                     (min-width: 768px) 100vw,
@@ -35,7 +35,7 @@
             src="public/images/2560/sky.jpg" alt="bg image">
 
         <div class="head-container" :class="{headColor : scroll}">
-        <a class="logo-link" href="#">
+        <a class="logo-link" href="/">
             <div class="logo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 718.8 648.71">
                     <title>logo</title>
@@ -80,7 +80,7 @@
                 </h3>
             </div>
 
-            <a class="resume" href="/private/resume.pdf" target="_blank">RESUME</a>
+            <a class="resume" href="/private/unger_helen_resume.pdf" target="_blank">RESUME</a>
 
             <div class="social-icons">
                 <ul>
@@ -189,6 +189,9 @@
 
                     <label for="email">EMAIL</label>
                     <input required type="email" id="email" name="email">
+
+                    <label for="subject">SUBJECT</label>
+                    <input type="text" id="subject" name="subject">
 
                     <label for="message">MESSAGE</label>
                     <textarea required type="text" rows="5" id="message" name="message"></textarea>
