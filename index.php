@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="public/styles/main.css">
@@ -12,6 +12,7 @@
     <title>Helen Unger</title>
 </head>
 <body>
+    <h1 class="hidden">Helen's Portfolio</h1>
     <div id="portfolio">
 
         <?php if((isset($_GET['status'])) && ($_GET['status'] === 'successful')):?>
@@ -26,7 +27,7 @@
         <img class="bg-image" 
             srcset="public/images/sky375.jpg 375w,
                     public/images/sky768.jpg 768w,
-                    public/images/sky15778.jpg 1578w,
+                    public/images/sky1578.jpg 1578w,
                     public/images/sky2560.jpg 2560w"
             sizes="(min-width: 2560px) 100vw,
                     (min-width: 1578px) 100vw,
@@ -49,6 +50,7 @@
         </a>
 
             <nav class="menu">
+                <h2 class="hidden">Main Navigation</h2>
                 <div v-on:click="toggleNav" class="ham-menu">
                     <i class="fas fa-bars"></i>
                 </div>

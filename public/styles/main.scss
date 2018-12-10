@@ -35,6 +35,10 @@ section{
     color: #000;
 }
 
+.hidden{
+    display: none;
+}
+
 
 // ------------------------------------- HEADER -----------------------------------------------------
 header{
@@ -499,7 +503,7 @@ margin-bottom: -20px;
 }
 
 .openWork{
-    max-height: 1000px !important;
+    max-height: 2000px !important;
     padding: 10px 0;
 }
 
@@ -662,6 +666,10 @@ footer{
         max-height: 200px;
         margin: 5px;
     }
+
+    .project-details{
+        height: 70vh;
+    }
     
     .show-details{
         display: block !important;
@@ -783,6 +791,11 @@ footer{
         max-height: 270px;
         margin: 5px;
         }
+    }
+
+    
+    .project-details{
+        height: 85vh;
     }
 
     .close{

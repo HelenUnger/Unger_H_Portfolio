@@ -145,7 +145,6 @@
                 fetch(url)
                 .then(res=>res.json())
                 .then(data =>{
-                    console.log(data);
                     //getting all the projects
                     this.allTypes = data;
                 })
@@ -157,7 +156,6 @@
                 fetch(url)
                 .then(res=>res.json())
                 .then(data =>{
-                    console.log(data);
                     //getting all the projects
                     this.allprojects = data;
                     this.filteredprojects = data;
