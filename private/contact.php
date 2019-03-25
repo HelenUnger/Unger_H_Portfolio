@@ -1,33 +1,24 @@
 <?php 
 
-function send_email(){
-
-    if(empty($_POST['message']) || empty($_POST['email']) || empty($_POST['name'])){
-        header('Location:../index.php?status=error');
-        exit();
-    }
-
-    if(!empty($_POST['subject'])){
-        header('Location:../index.php?status=good-try-spam-bot');
-        exit();
-    }
+function send_email($name, $email, $message){
   
     $to = 'helen-unger@hotmail.com';
     $subject = "MESSAGE FROM WEBSITE";
-    $message = 'Name: '. filter_var($_POST['name'], FILTER_SANITIZE_STRING) . "\n";
-    $message .='From: '.filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) . "\n";
-    $message .= 'Message:'. filter_var($_POST['message'], FILTER_SANITIZE_STRING);
-    $headers = 'From: '. filter_var($_POST['name'], FILTER_SANITIZE_STRING). "\n";
-    $headers .= 'Reply-To:'. filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $message = 'Name: '. filter_var($name, FILTER_SANITIZE_STRING) . "\n";
+    $message .='From: '.filter_var($email, FILTER_SANITIZE_EMAIL) . "\n";
+    $message .= 'Message:'. filter_var($message, FILTER_SANITIZE_STRING);
+    $headers = 'From: '. filter_var($name, FILTER_SANITIZE_STRING). "\n";
+    $headers .= 'Reply-To:'. filter_var($email, FILTER_SANITIZE_EMAIL);
     
-    if(mail($to, $subject, $message, $headers)){
-        header('Location:../index.php?status=successful');
+    if(fakemail($to, $subject, $message, $headers)){
+        return 'successful';
     }else{
-        header('Location:../index.php?status=error');
-        exit();
+        return 'failed';
     }
 }
 
-send_email();
+function fakemail(){
+    return true;
+}
 
 ?>

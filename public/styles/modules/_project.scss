@@ -1,0 +1,61 @@
+#project-content{
+    font-family: 'Raleway','Californian FB', sans-serif;
+    padding: 0 20px;
+    section {
+        padding: 70px 0 20px 0;
+    }
+    h2{
+        margin: 0;
+        padding: 0;
+        font-size: 2.5em;
+        text-align: center;
+        font-family: "autogateregular";
+    }
+    .type{
+        text-align: center;
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+    p{
+        margin-bottom: 20px;
+    }
+    .problem, .solution{
+        width: 100%;
+    }
+
+    .images{
+    text-align: center;
+    img{
+        max-width: 100%;
+        margin: 0 auto;
+        }
+    }
+}
+
+@media screen and (min-width: 700px){
+    #project-content{
+        max-width: 1400px;
+        padding: 0 75px;
+        margin: auto;
+    h2{
+        font-size: 5em;
+    }
+    h3{
+        font-size: 2em;
+    }
+    .desc{
+        text-align: center;
+        padding: 0 50px;
+    }
+
+    .ps-cont{
+        display: flex;
+        flex-wrap: wrap;
+        .problem, .solution{
+            width: 50%;
+            padding: 0 40px;
+        }
+    }
+
+}
+}

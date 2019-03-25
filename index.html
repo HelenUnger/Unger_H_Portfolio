@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.2/vue-router.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/main.css">
+
+    <title>Helen Unger</title>
+</head>
+<body>
+    <h1 class="hidden">Helen's Portfolio</h1>
+    <div id="app">
+
+    <router-view></router-view>
+    
+    <footer>
+    <ul>
+        <li v-on:click="homeLink"><router-link :to="{path:'/', hash: 'portfolio'}">home</router-link></li>
+        <li v-on:click="workLink"><router-link :to="{path:'/', hash: 'my-work'}">work</router-link></li>
+        <li v-on:click="aboutLink"><router-link :to="{path:'/', hash: 'about-me'}">about</router-link></li>
+        <li v-on:click="contactLink"><router-link :to="{path:'/', hash: 'contact'}">contact</router-link></li>
+            <li class="footIcon"><a href="https://github.com/HelenUnger"><i class="fab fa-github-square"></i></a></li>
+            <li class="footIcon"><a href="https://www.linkedin.com/in/helen-unger/"><i class="fab fa-linkedin"></i></a></li>
+            <li class="footIcon"><a href="https://www.instagram.com/img_src__/"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </footer>
+    </div>
+    
+    <script type="module" src="public/js/main.js"></script>
+</body>
+</html>
